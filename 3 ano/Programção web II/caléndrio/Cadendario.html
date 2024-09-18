@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário Mensal</title>
+</head>
+<body>
+    <div id="calendario-container">
+        <div id="janeiro" class="calendario">Calendário de Janeiro</div>
+        <div id="fevereiro" class="calendario">Calendário de Fevereiro</div>
+        <div id="marco" class="calendario">Calendário de Março</div>
+        <div id="abril" class="calendario">Calendário de Abril</div>
+        <div id="maio" class="calendario">Calendário de Maio</div>
+        <div id="junho" class="calendario">Calendário de Junho</div>
+        <div id="julho" class="calendario">Calendário de Julho</div>
+        <div id="agosto" class="calendario">Calendário de Agosto</div>
+        <div id="setembro" class="calendario">Calendário de Setembro</div>
+        <div id="outubro" class="calendario">Calendário de Outubro</div>
+        <div id="novembro" class="calendario">Calendário de Novembro</div>
+        <div id="dezembro" class="calendario">Calendário de Dezembro</div>
+    </div>
+
+    <script>
+        function mostrarCalendarioDoMes() {
+            const dataAtual = new Date();
+            const mesAtual = dataAtual.getMonth(); // Janeiro é 0, Dezembro é 11
+            const calendarios = document.querySelectorAll('.calendario');
+
+            calendarios.forEach((calendario, index) => {
+                if (index === mesAtual) {
+                    calendario.style.display = 'block';
+                } else {
+                    calendario.style.display = 'none';
+                }
+            });
+        }
+
+        // Chamar a função quando a página for carregada
+        window.onload = mostrarCalendarioDoMes;
+    </script>
+</body>
+</html>
